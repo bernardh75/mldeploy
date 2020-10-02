@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Input datas</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-5">
+        <h1 >
+          Quel est votre sentiment ? 
+        </h1>
+        <br>
+        <form action = "/prediction" method = "POST">
+          <p>Sentiment <input type = "text" name = "input_text" style="font-size:18pt;height:120px;width:200px;"/></p>
+          <p><input type = "submit" value = "submit" /></p>
+        </form>
+        {% if error %}
+          <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+      </div>  
+      <div class="col-md-5">
+        <h1 >
+          Quel est votre texte à afficher ? 
+        </h1>
+        <br>
+        <form action = "/customtext" method = "POST">
+          <p>Texte <input type = "text" name = "input_txt" style="font-size:18pt;height:120px;width:200px;"/></p>
+          <p><input type = "submit" value = "submit" /></p>
+        </form>
+        {% if error %}
+          <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+      </div>
+      <div class="col-md-2">
+        <h1 >
+          Entraînement
+        </h1>
+        <br>
+        <form action = "/entrainement" method = "POST">
+          <p><input type = "submit" value = "submit" /></p>
+        </form>
+        {% if error %}
+          <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
